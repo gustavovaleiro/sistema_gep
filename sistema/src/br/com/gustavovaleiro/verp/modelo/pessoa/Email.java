@@ -1,4 +1,4 @@
-package br.com.gustavovaleiro.srp.modelo.pessoa;
+package br.com.gustavovaleiro.verp.modelo.pessoa;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,9 +10,19 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tab_email")
 public class Email {
-	private Long id;
+	
+	@Id
+	@GeneratedValue
+	@Column(name = "email_id")
+	private Integer id;
+	
+	@Column(nullable = false, length = 60, name = "email_endereco")
 	private String email;
+	
+	@Column(length = 140, name = "email_descricao")
 	private String descricao;
+	
+	@ManyToOne
 	private Pessoa pessoa;
 	
 	
@@ -21,24 +31,22 @@ public class Email {
 		this.email = email;
 		this.descricao = descricao;
 	}
-	@Id
-	@GeneratedValue
-	@Column(name = "email_id")
-	public long getId() {
+	
+	public Integer getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	
-	@Column(nullable = false, length = 60, name = "email_endereco")
+	
 	public String getEmail() {
 		return email;
 	}
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	@Column(length = 140, name = "email_descricao")
+
 	public String getDescricao() {
 		return descricao;
 	}
@@ -46,7 +54,7 @@ public class Email {
 		this.descricao = descricao;
 	}
 	
-	@ManyToOne
+
 	public Pessoa getPessoa() {
 		return pessoa;
 	}

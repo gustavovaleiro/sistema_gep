@@ -1,4 +1,4 @@
- package br.com.gustavovaleiro.srp.modelo.pessoa;
+ package br.com.gustavovaleiro.verp.modelo.pessoa;
 
 import java.util.Collections;
 import java.util.List;
@@ -7,36 +7,42 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import br.com.gustavovaleiro.srp.modelo.pessoa.endereco.Endereco;
-import br.com.gustavovaleiro.srp.util.ConfigTemp;
+import br.com.gustavovaleiro.verp.modelo.pessoa.endereco.Endereco;
+import br.com.gustavovaleiro.verp.util.ConfigTemp;
 
 @Entity
 @Table(name = "tab_pessoa")
 public class Pessoa {
 	
-	private Long id;
-	private String nome;
-	private List<Email> email;
-	private List<Telefone> telefone;
-	private List<Endereco> endereco;
-	
 	@Id
 	@GeneratedValue
 	@Column(name = "pessoa_id")
-	public long getId() {
+	private Integer id;
+	
+	@Column(length = 60, nullable = false, name = "pessoa_nome")
+	private String nome;
+	
+	@OneToMany
+	private List<Email> email;
+	
+	@OneToMany
+	private List<Telefone> telefone;
+	
+	@OneToMany
+	private List<Endereco> endereco;
+	
+	
+	public Integer getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	
 	
-	
-	@Column(length = 60, nullable = false, name = "pessoa_nome")
 	public String getNome() {
 		return nome;
 	}
@@ -45,7 +51,7 @@ public class Pessoa {
 		this.nome = nome;
 	}
 	
-	@OneToMany
+	
 	public List<Email> getEmail() {
 		return Collections.unmodifiableList(email);
 	}
@@ -57,7 +63,7 @@ public class Pessoa {
 			throw new RuntimeException("Numero de email excedidos");
 	}
 	
-	@OneToMany
+
 	public List<Telefone> getTelefone() {
 		return Collections.unmodifiableList(telefone);
 	}
@@ -69,7 +75,7 @@ public class Pessoa {
 			throw new RuntimeException("Numero de telefone excedidos");
 	}
 	
-	@OneToMany
+
 	public List<Endereco> getEndereco() {
 		return Collections.unmodifiableList(endereco);
 	}

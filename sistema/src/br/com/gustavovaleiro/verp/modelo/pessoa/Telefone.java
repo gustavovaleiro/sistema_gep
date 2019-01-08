@@ -1,4 +1,4 @@
-package br.com.gustavovaleiro.srp.modelo.pessoa;
+package br.com.gustavovaleiro.verp.modelo.pessoa;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,29 +9,33 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tab_telefone")
 public class Telefone {
-	private Long id;
-	private String DDD;
-	private String numero;
-	
-	
 	@Id
 	@GeneratedValue
 	@Column( name = "telefone_id")
-	public long getId() {
+	private Integer id;
+	
+	@Column(length = 3, nullable = false, name = "telefone_ddd")
+	private String DDD;
+	
+	@Column(length = 9, nullable = false, name = "telefone_ddd")
+	private String numero;
+	
+	
+	
+	public Integer getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	
-	@Column(length = 3, nullable = false, name = "telefone_ddd")
 	public String getDDD() {
 		return DDD;
 	}
 	public void setDDD(String dDD) {
 		DDD = dDD;
 	}
-	@Column(length = 9, nullable = false, name = "telefone_ddd")
+	
 	public String getNumero() {
 		return numero;
 	}

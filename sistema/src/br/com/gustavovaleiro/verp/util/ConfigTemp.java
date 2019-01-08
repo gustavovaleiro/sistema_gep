@@ -1,4 +1,4 @@
-package br.com.gustavovaleiro.srp.util;
+package br.com.gustavovaleiro.verp.util;
 
 public class ConfigTemp {
 	public static int limiteEndereco = 2;

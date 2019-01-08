@@ -1,4 +1,4 @@
-package br.com.gustavovaleiro.srp.modelo.pessoa.endereco;
+package br.com.gustavovaleiro.verp.modelo.pessoa.endereco;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,28 +11,47 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tab_endereco")
 public class Endereco {
-	private Long id;
-	private Rua rua;
-	private Bairro bairro;
-	private Cidade cidade;
-	private Estado estado;
-	private int numero;
-	private String complemento;
-	private String CEP;
 	
-	
+
 	@Id
 	@GeneratedValue
 	@Column(name = "endereco_id")
-	public long getId() {
-		return id;
-	}
-	public void setId(long id) {
-		this.id = id;
-	}
+	private Integer id;
 	
 	@ManyToOne
 	@JoinColumn(name = "endereco_rua")
+	private Rua rua;
+	
+	@ManyToOne
+	@JoinColumn(name = "endereco_bairro")
+	private Bairro bairro;
+	
+	@ManyToOne
+	@JoinColumn(nullable = false, name = "endereco_cidade")
+	private Cidade cidade;
+	
+	@ManyToOne
+	@JoinColumn(nullable = false, name = "endereco_Estado")
+	private Estado estado;
+	
+	@Column( name = "endereco_numero")
+	private int numero;
+	
+	@Column(name = "endereco_complemento")
+	private String complemento;
+	
+	@Column(nullable = false, length = 8, name = "endereco_CEP")
+	private String CEP;
+	
+	
+	public Integer getId() {
+		return id;
+	}
+	
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	
 	public Rua getRua() {
 		return rua;
 	}
@@ -40,8 +59,6 @@ public class Endereco {
 		this.rua = rua;
 	}
 	
-	@ManyToOne
-	@JoinColumn(name = "endereco_bairro")
 	public Bairro getBairro() {
 		return bairro;
 	}
@@ -49,8 +66,6 @@ public class Endereco {
 		this.bairro = bairro;
 	}
 	
-	@ManyToOne
-	@JoinColumn(nullable = false, name = "endereco_cidade")
 	public Cidade getCidade() {
 		return cidade;
 	}
@@ -58,8 +73,6 @@ public class Endereco {
 		this.cidade = cidade;
 	}
 	
-	@ManyToOne
-	@JoinColumn(nullable = false, name = "endereco_Estado")
 	public Estado getEstado() {
 		return estado;
 	}
@@ -67,7 +80,7 @@ public class Endereco {
 		this.estado = estado;
 	}
 	
-	@Column( name = "endereco_numero")
+	
 	public int getNumero() {
 		return numero;
 	}
@@ -75,7 +88,6 @@ public class Endereco {
 		this.numero = numero;
 	}
 	
-	@Column(name = "endereco_complemento")
 	public String getComplemento() {
 		return complemento;
 	}
@@ -83,7 +95,7 @@ public class Endereco {
 		this.complemento = complemento;
 	}
 	
-	@Column(nullable = false, length = 8, name = "endereco_CEP")
+	
 	public String getCEP() {
 		return CEP;
 	}

@@ -9,13 +9,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
-import br.com.gustavovaleiro.verp.modelo.pessoa.endereco.Endereco;
+import br.com.gustavovaleiro.verp.modelo.pessoa.auxiliar.Email;
+import br.com.gustavovaleiro.verp.modelo.pessoa.auxiliar.Endereco;
+import br.com.gustavovaleiro.verp.modelo.pessoa.auxiliar.Telefone;
 import br.com.gustavovaleiro.verp.util.ConfigTemp;
 
 @Entity
 @Table(name = "tab_pessoa")
-public class Pessoa {
+@Inheritance(strategy = InheritanceType.JOINED)
+public abstract class Pessoa {
 	
 	@Id
 	@GeneratedValue
@@ -38,6 +43,8 @@ public class Pessoa {
 	public Integer getId() {
 		return id;
 	}
+	
+	
 	public void setId(Integer id) {
 		this.id = id;
 	}

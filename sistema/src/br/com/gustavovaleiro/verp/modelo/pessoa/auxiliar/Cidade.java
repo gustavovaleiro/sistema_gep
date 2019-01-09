@@ -1,4 +1,4 @@
-package br.com.gustavovaleiro.verp.modelo.pessoa.endereco;
+package br.com.gustavovaleiro.verp.modelo.pessoa.auxiliar;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

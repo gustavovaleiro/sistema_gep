@@ -1,4 +1,4 @@
-package br.com.gustavovaleiro.verp.modelo.pessoa;
+package br.com.gustavovaleiro.verp.modelo.pessoa.auxiliar;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import br.com.gustavovaleiro.verp.modelo.pessoa.Pessoa;
 
 @Entity
 @Table(name = "tab_email")

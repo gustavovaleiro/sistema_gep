@@ -1,4 +1,4 @@
-package br.com.gustavovaleiro.verp.modelo.pessoa.auxiliar;
+package br.com.gustavovaleiro.verp.modelo.rh.auxiliar.localizacao;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

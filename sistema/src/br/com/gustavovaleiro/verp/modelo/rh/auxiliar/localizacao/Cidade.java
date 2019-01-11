@@ -1,4 +1,4 @@
-package br.com.gustavovaleiro.verp.modelo.pessoa.auxiliar;
+package br.com.gustavovaleiro.verp.modelo.rh.auxiliar.localizacao;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,15 +7,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tab_bairro")
-public class Bairro {
+@Table(name = "tab_cidade")
+public class Cidade {
 	@Id
 	@GeneratedValue
-	@Column(name = "bairro_id")
+	@Column(name = "cidade_id")
 	private Integer id;
 	
-	@Column(nullable = false, length = 20, name = "bairro_nome")
-	private String bairro;
+	@Column(nullable = false, length = 60, name = "cidade_nome")
+	private String nome;
 	
 	
 	public Integer getId() {
@@ -25,11 +25,12 @@ public class Bairro {
 		this.id = id;
 	}
 	
-	public String getBairro() {
-		return bairro;
+	
+	public String getNome() {
+		return nome;
 	}
-	public void setBairro(String bairro) {
-		this.bairro = bairro;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 	
 	

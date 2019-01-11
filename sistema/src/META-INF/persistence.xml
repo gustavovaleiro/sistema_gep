@@ -11,14 +11,20 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <!-- Aqui são listadas todas as entidades -->
-        <class>br.com.gustavovaleiro.verp.modelo.pessoa.Email</class>
-        <class>br.com.gustavovaleiro.verp.modelo.pessoa.Pessoa</class>
-        <class>br.com.gustavovaleiro.verp.modelo.pessoa.Telefone</class>
-        <class>br.com.gustavovaleiro.verp.modelo.pessoa.endereco.Bairro</class>
-        <class>br.com.gustavovaleiro.verp.modelo.pessoa.endereco.Cidade</class>   
-        <class>br.com.gustavovaleiro.verp.modelo.pessoa.endereco.Endereco</class>
-        <class>br.com.gustavovaleiro.verp.modelo.pessoa.endereco.Estado</class>
-     	<class>br.com.gustavovaleiro.verp.modelo.pessoa.endereco.Rua</class>
+        <class>br.com.gustavovaleiro.verp.modelo.rh.Pessoa</class>
+        <class>br.com.gustavovaleiro.verp.modelo.rh.PessoaFisica</class>
+        <class>br.com.gustavovaleiro.verp.modelo.rh.PessoaJuridica</class>
+        <class>br.com.gustavovaleiro.verp.modelo.rh.Funcionario</class>
+        <class>br.com.gustavovaleiro.verp.modelo.rh.Cliente</class>
+        <class>br.com.gustavovaleiro.verp.modelo.rh.auxiliar.Email</class>
+        <class>br.com.gustavovaleiro.verp.modelo.rh.auxiliar.Telefone</class>
+        <class>br.com.gustavovaleiro.verp.modelo.rh.auxiliar.CNPJ</class>
+        <class>br.com.gustavovaleiro.verp.modelo.rh.auxiliar.CPF</class>
+        <class>br.com.gustavovaleiro.verp.modelo.rh.auxiliar.RG</class>
+        <class>br.com.gustavovaleiro.verp.modelo.rh.auxiliar.localizacao.Bairro</class>
+        <class>br.com.gustavovaleiro.verp.modelo.rh.auxiliar.localizacao.Cidade</class>   
+        <class>br.com.gustavovaleiro.verp.modelo.rh.auxiliar.localizacao.Estado</class>
+     	<class>br.com.gustavovaleiro.verp.modelo.rh.auxiliar.localizacao.Rua</class>
      	
 
         <properties>    

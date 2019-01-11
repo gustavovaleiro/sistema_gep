@@ -1,5 +1,6 @@
- package br.com.gustavovaleiro.verp.modelo.pessoa;
+ package br.com.gustavovaleiro.verp.modelo.rh;
 
+import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
 
@@ -12,9 +13,9 @@ import javax.persistence.Table;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
-import br.com.gustavovaleiro.verp.modelo.pessoa.auxiliar.Email;
-import br.com.gustavovaleiro.verp.modelo.pessoa.auxiliar.Endereco;
-import br.com.gustavovaleiro.verp.modelo.pessoa.auxiliar.Telefone;
+import br.com.gustavovaleiro.verp.modelo.rh.auxiliar.Email;
+import br.com.gustavovaleiro.verp.modelo.rh.auxiliar.Telefone;
+import br.com.gustavovaleiro.verp.modelo.rh.auxiliar.localizacao.Endereco;
 import br.com.gustavovaleiro.verp.util.ConfigTemp;
 
 @Entity
@@ -29,6 +30,9 @@ public abstract class Pessoa {
 	
 	@Column(length = 60, nullable = false, name = "pessoa_nome")
 	private String nome;
+	
+	@Column(nullable = false, name = "pessoa_dataCadastro")
+	private LocalDate  dataCadastro;
 	
 	@OneToMany
 	private List<Email> email;

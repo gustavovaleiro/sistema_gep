@@ -1,9 +1,12 @@
+import br.com.gustavovaleiro.verp.modelo.rh.auxiliar.CNPJ;
 
 public class TestePessoa {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		CNPJ cnpj = new CNPJ();
+		cnpj.setCNPJ("22014353000151");
+		System.out.println(cnpj.getCNPJ());
+	
 	}
 
 }
